@@ -1,0 +1,160 @@
+/* From Uiverse.io by Navarog21 */
+.explore-button {
+    
+    color: #ffffff !important; /* White text */
+    background: transparent !important;
+    margin-top: 24px; 
+    position: relative;
+    width: 11em;
+    height: 4em;
+    outline: none;
+    transition: 0.1s;
+    background-color: transparent;
+    border: none;
+    font-size: 13px;
+    font-weight: bold;
+    color: #ddebf0;
+    cursor: pointer;
+  }
+  
+  .explore-button p {
+    position: relative;
+    z-index: 2;
+    font-size: 14px;
+  }
+  
+ 
+  .clip {
+    --color: #ff0000;
+    position: absolute;
+    top: 0;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    border: 5px double var(--color);
+    box-shadow: inset 0px 0px 15px #8b2020;
+    clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+  }
+  
+  .arrow {
+    position: absolute;
+    transition: 0.2s;
+    background-color: #ffffff;
+    top: 35%;
+    width: 11%;
+    height: 30%;
+  }
+  
+  .leftArrow {
+    left: -13.5%;
+    clip-path: polygon(100% 0, 100% 100%, 0 50%);
+  }
+  
+  .rightArrow {
+    clip-path: polygon(100% 49%, 0 0, 0 100%);
+    left: 102%;
+  }
+  
+  .explore-button:hover .rightArrow {
+    background-color: #ff0000;
+    left: -15%;
+    animation: 0.6s ease-in-out both infinite alternate rightArrow8;
+  }
+  
+  .explore-button:hover .leftArrow {
+    background-color: #ff0000;
+    left: 103%;
+    animation: 0.6s ease-in-out both infinite alternate leftArrow8;
+  }
+  
+  .corner {
+    position: absolute;
+    width: 4em;
+    height: 4em;
+    background-color: #ffffff;
+    box-shadow: inset 1px 1px 8px #be3939;
+    transform: scale(1) rotate(45deg);
+    transition: 0.2s;
+  }
+  
+  .rightTop {
+    top: -1.98em;
+    left: 91%;
+  }
+  
+  .leftTop {
+    top: -1.96em;
+    left: -3.0em;
+  }
+  
+  .leftBottom {
+    top: 2.10em;
+    left: -2.15em;
+  }
+  
+  .rightBottom {
+    top: 45%;
+    left: 88%;
+  }
+  
+  .explore-button:hover .leftTop {
+    animation: 0.1s ease-in-out 0.05s both changeColor8, 0.2s linear 0.4s both lightEffect8;
+  }
+  
+  .explore-button:hover .rightTop {
+    animation: 0.1s ease-in-out 0.15s both changeColor8, 0.2s linear 0.4s both lightEffect8;
+  }
+  
+  .explore-button:hover .rightBottom {
+    animation: 0.1s ease-in-out 0.25s both changeColor8, 0.2s linear 0.4s both lightEffect8;
+  }
+  
+  .explore-button:hover .leftBottom {
+    animation: 0.1s ease-in-out 0.35s both changeColor8, 0.2s linear 0.4s both lightEffect8;
+  }
+  
+  .explore-button:hover .corner {
+    transform: scale(1.25) rotate(45deg);
+  }
+  
+  .explore-button:hover .clip {
+    animation: 0.2s ease-in-out 0.55s both greenLight8;
+    --color: #ffffff;
+  }
+  
+  @keyframes changeColor8 {
+    from {
+      background-color: #ff0000;
+    }
+    to {
+      background-color: #970000;
+    }
+  }
+  
+  @keyframes lightEffect8 {
+    from {
+      box-shadow: 1px 1px 5px #e32a00;
+    }
+    to {
+      box-shadow: 0 0 2px #d62401;
+    }
+  }
+  
+  @keyframes greenLight8 {
+    to {
+      box-shadow: inset 0px 0px 32px #630e0e;
+    }
+  }
+  
+  @keyframes leftArrow8 {
+    to {
+      transform: translateX(10px);
+    }
+  }
+  
+  @keyframes rightArrow8 {
+    to {
+      transform: translateX(-10px);
+    }
+  }
+  

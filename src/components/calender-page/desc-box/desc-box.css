@@ -1,0 +1,120 @@
+.desc-box {
+    display: flex; /* Enables side-by-side layout */
+    justify-content: space-between; /* Spreads items */
+    align-items: center; /* Aligns items in the center */
+    background-color: rgb(0, 0, 0);
+    width: 90%;  
+    margin: 5% auto;  
+    padding: 25px;  
+    position: relative;
+    height: 56vh;
+    background: linear-gradient(145deg, #1a1a1a, #000000);
+    box-shadow: 
+        5px 5px 15px rgba(255, 0, 0, 0.5), 
+        inset 2px 2px 5px rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    border: 3px solid #990000;  
+    overflow: hidden;
+}
+
+/* Click Wobble Effect */
+.desc-box:active {
+    animation: wobble 0.4s ease-in-out;
+  }
+  
+  @keyframes wobble {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(2deg); }
+    50% { transform: rotate(-2deg); }
+    75% { transform: rotate(1deg); }
+    100% { transform: rotate(0deg); }
+  }
+  
+  /* Apply wobble effect on click */
+  .desc-box:active {
+    animation: wobble 0.6s ease-in-out;
+  }
+
+/* Styling for the description box next to the calendar */
+.desc-box-info {
+    width: 70%; /* Takes remaining space */
+    background: linear-gradient(145deg, #121212, #2a2a2a);
+    box-shadow: 
+        5px 5px 15px rgba(255, 0, 0, 0.5), 
+        inset 2px 2px 5px rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    border: 5px solid #990000;  
+    padding: 5px;
+    
+    color: white;
+    font-size: 16px;
+    box-shadow: 3px 3px 10px rgba(255, 0, 0, 0.5);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+}
+
+
+
+/* Responsive - Hide desc-box-info on small screens */
+@media (max-width: 1024px) {
+    .desc-box {
+        flex-direction: column; /* Stack items vertically */
+        align-items: center;
+    }
+
+    .desc-box-info {
+        display: none; /* Hide on smaller screens */
+    }
+
+    .calendar-container {
+        max-width: 100%; /* Ensure calendar takes full width */
+    }
+}
+
+@media (max-width: 1024px) {
+    .desc-box-info {
+        display: none; /* Hide the extra info box */
+    }
+}
+ 
+
+@media (max-width: 1024px) {
+    .desc-box {
+        display: flex;
+        flex-direction: column; /* Stack items properly */
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        max-width: 400px; /* Adjust to prevent stretching */
+        height: auto; /* Prevent extra height */
+       
+        padding: 10px;
+        margin: 0 auto; /* Center it horizontally */
+    }
+
+    .calendar-container {
+        width: 100%;
+        max-width: 100%; /* Ensure it takes full space */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media (max-width: 1024px) {
+    .desc-box {
+        margin-top: 8%; /* Increase space */
+    }
+}
+
+@media (max-width: 768px) {
+    .desc-box {
+        margin-top: 10%; /* Even more space for smaller screens */
+    }
+}
+
+
+

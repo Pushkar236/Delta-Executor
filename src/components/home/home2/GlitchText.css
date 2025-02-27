@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+
+.content .text {
+  position: relative;
+  color: #fff;
+  font-weight: 700;
+  font-size: 50px;
+  text-align: center;
+  padding: 30px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.content .text:before,
+.content .text:after {
+  content: attr(data-text);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  background: transparent;
+}
+
+.content .text:before {
+  left: 2px;
+  text-shadow: -2px 0 red;
+  animation: glitch-1 1.5s infinite linear alternate;
+}
+
+.content .text:after {
+  left: -2px;
+  text-shadow: 2px 0 blue;
+  animation: glitch-2 1.5s infinite linear alternate;
+}
+
+@keyframes glitch-1 {
+  0% {
+    clip: rect(60px, 550px, 50px, 30px);
+  }
+  20% {
+    clip: rect(10px, 550px, 80px, 30px);
+  }
+  40% {
+    clip: rect(80px, 550px, 30px, 30px);
+  }
+  60% {
+    clip: rect(40px, 550px, 70px, 30px);
+  }
+  80% {
+    clip: rect(90px, 550px, 50px, 30px);
+  }
+  100% {
+    clip: rect(20px, 550px, 60px, 30px);
+  }
+}
+
+@keyframes glitch-2 {
+  0% {
+    clip: rect(20px, 550px, 40px, 30px);
+  }
+  25% {
+    clip: rect(50px, 550px, 30px, 30px);
+  }
+  50% {
+    clip: rect(70px, 550px, 80px, 30px);
+  }
+  75% {
+    clip: rect(90px, 550px, 50px, 30px);
+  }
+  100% {
+    clip: rect(40px, 550px, 60px, 30px);
+  }
+}

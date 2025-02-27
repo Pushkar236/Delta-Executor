@@ -1,0 +1,588 @@
+/* General Styles */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: rgb(0, 0, 0);
+  color: white;
+  overflow-x: hidden;
+}
+
+
+header {
+  background-color: black;
+  padding: 10px 0;
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+}
+
+.navbar .logo a {
+  color: red;
+  text-decoration: none;
+}
+
+.timeline-container {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding: 20px;
+  position: relative;
+  transform: translateX(-50px); /* Adjust the value as needed */
+}
+
+/* Lines */
+.line {
+  position: relative;
+  width: 7px;
+  height: 8000px;
+  border-radius: 5px;
+  transition: background 0.5s ease-out;
+}
+
+/* Points */
+.point {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  border: 3px solid white;
+  border-radius: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: background-color 0.5s ease-out, transform 0.3s ease-in-out;
+}
+
+/* Containers */
+.container {
+  position: absolute;
+  width: 400px;
+  height: 200px;
+  padding: 15px;
+  gap:5px;
+  background: rgba(0, 0, 0, 0.8);
+  box-shadow: 0 0 15px #ff0000, 0 0 30px #ff0000;
+  border-radius: 15px;
+  opacity: 0;
+  margin-left: 130px;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+  background: linear-gradient(145deg, #1a1a1a, #000000); /* Dark gradient for SD effect */
+  box-shadow: 
+    5px 5px 15px rgba(255, 0, 0, 0.5), /* Red glow */
+    inset 2px 2px 5px rgba(255, 255, 255, 0.1); /* Inner light for depth */
+  border-radius: 15px;
+  border: 3px solid #990000; /* Dark red border */
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* Align content to the left */
+}
+
+/* Ensure the date text doesn't have a background */
+.container p {
+  background: transparent !important;
+  color: white; /* Ensures the text is properly visible */
+  margin: 0;
+  padding: 0;
+}
+
+/* Hover Effect - Slight Lift */
+.container:hover {
+  transform: translateY(5px);
+  box-shadow: 
+    8px 8px 20px rgba(255, 0, 0, 0.7),
+    inset 3px 3px 6px rgba(255, 255, 255, 0.2);
+}
+
+/* Click Wobble Effect */
+.container:active {
+  animation: wobble 0.6s ease-in-out;
+}
+
+
+
+
+/* Poster Section */
+.poster-box {
+  width: 30%; /* Dynamic width for responsiveness */
+  max-width: 150px; /* Ensures it doesn’t grow too large */
+  height: auto;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-left: 3px;
+  box-shadow: 
+    5px 5px 10px rgba(255, 0, 0, 0.1), /* Red glow */
+    inset 2px 2px 5px rgba(154, 154, 154, 0.1); /* Inner light for depth */
+  border-radius: 15px;
+  border: 3px solid #510000; /* Dark red border */
+}
+
+/* Image Settings */
+.poster-box img {
+  width: 100%;
+  height: auto;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Event Name Box */
+.event-name-box {
+ 
+  display: flex;
+  flex-direction: column; /* Stacks text vertically */
+  align-items: center; /* Centers text horizontally */
+  text-align: center; /* Ensures text is centered */
+  flex: 1; /* Takes up remaining space */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px; /* Ensures text is not too close to edges */
+  background: transparent !important;
+  border-radius: 10px;
+  align-self: flex-start; /* Aligns text to the top */
+}
+
+/* Text inside event name box */
+.event-name-box p {
+  background: transparent !important;
+  font-size: 20px;
+  padding: 3px;
+  color: #fff; /* Ensures text is white and visible */
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.explore {
+  background: transparent !important;
+}
+
+
+.date-box {
+  position: absolute;
+  width: 300px; /* Adjust width as needed */
+  height: 140px; /* Adjust height as needed */
+  padding: 20px;
+  background: linear-gradient(145deg, #1a1a1a, #000000); /* Dark gradient for SD effect */
+  box-shadow: 
+    5px 5px 15px rgba(255, 0, 0, 0.5), /* Red glow */
+    inset 2px 2px 5px rgba(255, 255, 255, 0.1); /* Inner light for depth */
+  border-radius: 15px;
+  border: 3px solid #990000; /* Dark red border */
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out, box-shadow 0.3s ease-in-out;
+  font-size: 33px;
+  font-weight: bold;
+  text-align: center;
+  left: calc(50% - 130px - 3.5px - 300px); /* Centered with respect to the line */
+}
+
+/* Ensure the date text doesn't have a background */
+.date-box p {
+  background: transparent !important;
+  color: white; /* Ensures the text is properly visible */
+  margin: 0;
+  padding: 0;
+}
+
+/* Hover Effect - Slight Lift */
+.date-box:hover {
+  transform: translateY(5px);
+  box-shadow: 
+    8px 8px 20px rgba(255, 0, 0, 0.7),
+    inset 3px 3px 6px rgba(255, 255, 255, 0.2);
+}
+
+/* Click Wobble Effect */
+.date-box:active {
+  animation: wobble 0.4s ease-in-out;
+}
+
+@keyframes wobble {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(2deg); }
+  50% { transform: rotate(-2deg); }
+  75% { transform: rotate(1deg); }
+  100% { transform: rotate(0deg); }
+}
+
+/* Apply wobble effect on click */
+.date-box:active {
+  animation: wobble 0.6s ease-in-out;
+}
+
+
+@font-face {
+  font-family: glitch;
+  src: url(./public/Geo-Regular.ttf);
+}
+.glitch {
+  font-family: glitch;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+/* ✅ Fade-in effect for the date-box */
+.point[style*="background-color: red"] + .container + .date-box {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+.point[style*="background-color: red"] + .container,
+.point[style*="background-color: red"] + .container + .date-box {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: 240px;
+    height: 100px;
+    margin-left: 50px;
+  }
+
+  
+}
+
+/* ✅ Hide Leftmost & Rightmost Lines on Smaller Screens */
+@media (max-width: 768px) {
+  .line:first-child, /* Leftmost line */
+  .line:last-child {  /* Rightmost line */
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Hide date boxes on the left side */
+  .date-box {
+    position: absolute; /* Ensure it positions properly */
+    left: calc(80px + 50px); /* Move it to the right of the line */
+    width: auto;
+    padding: 10px 15px;
+    background: rgba(0, 0, 0, 0.8); /* Semi-transparent background for visibility */
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+    text-align: center;
+    border: 2px solid red; /* Red border for emphasis */
+    border-radius: 8px;
+    z-index: 1000; /* Ensure it appears above other elements */
+  }
+
+
+  /* Shift the center line to the left */
+  .line {
+    height: 9800px;
+    position: absolute;
+    left: 80px; /* Adjust this value as needed */
+    
+  }
+
+  /* Adjust the containers to align properly */
+  .container {
+    height: fit-content;
+    
+  }
+}
+
+@media (max-width: 1024px) {
+  /* Hide date boxes on the left side */
+  .date-box {
+    display: none;
+  }
+
+  /* Shift the center line to the left */
+  .line {
+    position: absolute;
+    left: 80px; /* Adjust this value as needed */
+  }
+
+  /* Adjust the containers to align properly */
+  .container {
+    margin-left: 40px; /* Shift containers accordingly */
+  }
+}
+
+/* 🔹 Fix for iPad Air & iPad Pro (820px - 1024px width) */
+@media (min-width: 820px) and (max-width: 1180px) {
+  /* Position the date box to the left of the container */
+  .date-box {
+    display: block; /* Ensure it is visible */
+    position: absolute;
+    left: 100px; /* Align to the left */
+    width: 250px; /* Adjust width as needed */
+    text-align: center;
+    height: fit-content;
+  }
+
+  /* Shift the center line slightly to the left */
+  .line {
+    position: absolute;
+    margin-left: 140px; /* Adjust for better positioning */
+  }
+
+  .point {
+    background-color: #ff0000;
+    z-index: 999;
+  }
+
+  /* Increase container width and move it right */
+  .container {
+    height: fit-content;
+    width: fit-content; /* Adjust width dynamically */
+    margin-left: 450px; /* Proper spacing from the line */
+  }
+}
+
+
+@media (max-width: 768px) {
+  /* Hide the text inside the right container */
+  .event-name-box {
+    display: none;
+  }
+
+  /* Hide the explore button */
+  .explore {
+    display: none;
+  }
+
+  /* Ensure the poster box is responsive and centered */
+  .poster-box {
+    width: 100%; /* Takes full width of the container */
+    max-width: 200px; /* Prevents it from getting too large */
+    margin: auto; /* Centers it */
+  }
+}
+
+@media (max-width: 768px) {
+  /* Poster Box */
+  .poster-box {
+    position: relative;
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: filter 0.2s ease-in-out;
+    
+  }
+
+  /* Poster Image */
+  .poster-box img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: filter 0.2s ease-in-out;
+  }
+
+  /* Darken image when clicked */
+  .poster-box:active img {
+    filter: brightness(30%);
+  }
+
+  /* Hidden text inside poster-box */
+  
+  .poster-box-1:active::after, .poster-box-2:active::after, .poster-box-3:active::after, 
+  .poster-box-4:active::after, .poster-box-5:active::after, .poster-box-6:active::after,
+  .poster-box-7:active::after, .poster-box-8:active::after, .poster-box-9:active::after,
+  .poster-box-10:active::after, .poster-box-11:active::after, .poster-box-12:active::after,
+  .poster-box-13:active::after, .poster-box-14:active::after, .poster-box-15:active::after,
+  .poster-box-16:active::after, .poster-box-17:active::after, .poster-box-18:active::after,
+  .poster-box-19:active::after, .poster-box-20:active::after, .poster-box-21:active::after,
+  .poster-box-22:active::after, .poster-box-23:active::after, .poster-box-24:active::after,
+  .poster-box-25:active::after, .poster-box-26:active::after{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 23px; /* Larger font for better readability */
+    font-family: glitch;
+    font-weight: bold;
+    color: white; /* Ensure the text is bright and clear */
+    opacity: 0; /* Initially hidden */
+    text-align: center; /* Center text */
+    width: 100%; /* Ensure text stays centered */
+    transition: opacity 0.3s ease-in-out;
+    pointer-events: none; /* Prevent text from blocking clicks */
+    z-index: 999;
+  }
+
+  .poster-box-1:active::after {
+    content: "IPL AUCTION \A [ROUND 2]\A \A 6 MARCH 2025\A 5 PM TO 7 PM"; /* Two blank lines */
+    white-space: pre-line;  /* Enables line breaks */
+    display: block;  /* Ensures proper rendering */
+}
+
+
+  .poster-box-2:active::after{
+    content: "IPL AUCTION \A [ROUND 3]\A \A 7 MARCH 2025\A 8 AM TO 7 PM"; /* Two blank lines */
+    white-space: pre-line;  /* Enables line breaks */
+    display: block;  /* Ensures proper rendering */
+  }
+
+  .poster-box-3:active::after{
+    content: "BLIND CODING \A [ROUND 2]\A \A 6 MARCH 2025\A 5 PM TO 7 PM"; /* Two blank lines */
+    white-space: pre-line;  /* Enables line breaks */
+    display: block;  /* Ensures proper rendering */
+  }
+
+  .poster-box-4:active::after{
+    content: "BLIND CODING \A [ROUND 3]\A \A 7 MARCH 2025\A 8 AM TO 10 AM"; /* Two blank lines */
+    white-space: pre-line;  /* Enables line breaks */
+    display: block;  /* Ensures proper rendering */
+  }
+
+  .poster-box-5:active::after{
+    content: "CAT \A [ROUND 1]\A \A 7 MARCH 2025\A 8 AM TO 10 AM"; /* Two blank lines */
+    white-space: pre-line;  /* Enables line breaks */
+    display: block;  /* Ensures proper rendering */
+  }
+
+  .poster-box-6:active::after{
+    content: "CAT \A [ROUND 2]\A \A 7 MARCH 2025\A 2 PM TO 4 PM"; /* Two blank lines */
+    white-space: pre-line;  /* Enables line breaks */
+    display: block;  /* Ensures proper rendering */
+  }
+
+  .poster-box-7:active::after{
+    content: "CAT \A [ROUND 3]\A \A 8 MARCH 2025\A 10 AM TO 12 PM"; /* Two blank lines */
+    white-space: pre-line;  /* Enables line breaks */
+    display: block;  /* Ensures proper rendering */
+  }
+
+  .poster-box-8:active::after{
+    content: "CODE RELAY \A [ROUND 1]\A \A 7 MARCH 2025\A 9 AM TO 11 AM"; /* Two blank lines */
+    white-space: pre-line;  /* Enables line breaks */
+    display: block;  /* Ensures proper rendering */
+  }
+
+  .poster-box-9:active::after{
+    content: "CODE RELAY \A [ROUND 2]\A \A 7 MARCH 2025\A 2 PM TO 5 PM"; /* Two blank lines */
+    white-space: pre-line;  /* Enables line breaks */
+    display: block;  /* Ensures proper rendering */
+  }
+
+  .poster-box-10:active::after{
+    content: "CODE RELAY \A [ROUND 3]\A \A 8 MARCH 2025\A 10 AM TO 12 PM"; /* Two blank lines */
+    white-space: pre-line;  /* Enables line breaks */
+    display: block;  /* Ensures proper rendering */
+  }
+
+  .poster-box-11:active::after{
+    content: "ACTION REPLAY \A [ROUND 2]\A \A 7 MARCH 2025\A 10 AM TO 1 PM"; /* Two blank lines */
+    white-space: pre-line;  /* Enables line breaks */
+    display: block;  /* Ensures proper rendering */
+  }
+
+  .poster-box-12:active::after{
+    content: "ACTION REPLAY \A [ROUND 3,4]\A \A 8 MARCH 2025\A 10 AM TO 2 PM"; /* Two blank lines */
+    white-space: pre-line;  /* Enables line breaks */
+    display: block;  /* Ensures proper rendering */
+  }
+
+  .poster-box-13:active::after{
+    content: "MASTERCHEF UI \A [ROUND 1]\A \A 7 MARCH 2025\A 10 AM TO 1 PM"; /* Two blank lines */
+    white-space: pre-line;  /* Enables line breaks */
+    display: block;  /* Ensures proper rendering */
+  }
+
+  .poster-box-14:active::after{
+    content: "MASTERCHEF UI \A [ROUND 2]\A \A 7 MARCH 2025\A 4 PM TO 7 PM"; /* Two blank lines */
+    white-space: pre-line;  /* Enables line breaks */
+    display: block;  /* Ensures proper rendering */
+  }
+
+  .poster-box-15:active::after{
+    content: "MASTERCHEF UI \A [ROUND 3]\A \A 6 MARCH 2025\A 12 PM TO 2 PM"; /* Two blank lines */
+    white-space: pre-line;  /* Enables line breaks */
+    display: block;  /* Ensures proper rendering */
+  }
+
+  .poster-box-16:active::after{
+    content: "BYTE ME \A [ROUND 1]\A \A 7 MARCH 2025\A 11 AM TO 1 PM"; /* Two blank lines */
+    white-space: pre-line;  /* Enables line breaks */
+    display: block;  /* Ensures proper rendering */
+  }
+  
+  .poster-box-17:active::after{
+    content: "BYTE ME \A [ROUND 2]\A \A 7 MARCH 2025\A 3 PM TO 7 PM"; /* Two blank lines */
+    white-space: pre-line;  /* Enables line breaks */
+    display: block;  /* Ensures proper rendering */
+  }
+
+  .poster-box-18:active::after{
+    content: "CODING OLYMPICS \A [ROUND 1]\A \A 7 MARCH 2025\A 2 PM TO 4 PM"; /* Two blank lines */
+    white-space: pre-line;  /* Enables line breaks */
+    display: block;  /* Ensures proper rendering */
+  }
+
+  .poster-box-19:active::after{
+    content: "CODING OLYMPICS \A [ROUND 2]\A \A 7 MARCH 2025\A 4 PM TO 6 PM"; /* Two blank lines */
+    white-space: pre-line;  /* Enables line breaks */
+    display: block;  /* Ensures proper rendering */
+  }
+
+  .poster-box-20:active::after{
+    content: "CODING OLYMPICS \A [ROUND 3]\A \A 8 MARCH 2025\A 8 AM TO 10 AM"; /* Two blank lines */
+    white-space: pre-line;  /* Enables line breaks */
+    display: block;  /* Ensures proper rendering */
+  }
+
+  .poster-box-21:active::after{
+    content: "INNOVATE X \A [ROUND 1]\A \A 8 MARCH 2025\A 9 AM TO 1 PM"; /* Two blank lines */
+    white-space: pre-line;  /* Enables line breaks */
+    display: block;  /* Ensures proper rendering */
+  }
+
+  .poster-box-22:active::after{
+    content: "SHE SOLVES \A [ROUND 1]\A \A 8 MARCH 2025\A 8 AM TO 2 PM"; /* Two blank lines */
+    white-space: pre-line;  /* Enables line breaks */
+    display: block;  /* Ensures proper rendering */
+  }
+
+  .poster-box-23:active::after{
+    content: "SHERLOCK \A [ROUND 2,3]\A \A 8 MARCH 2025\A 8 AM TO 1 PM"; /* Two blank lines */
+    white-space: pre-line;  /* Enables line breaks */
+    display: block;  /* Ensures proper rendering */
+  }
+
+  .poster-box-24:active::after{
+    content: "CODIGO \A [ROUND 2]\A \A 8 MARCH 2025\A 10 AM TO 12 PM"; /* Two blank lines */
+    white-space: pre-line;  /* Enables line breaks */
+    display: block;  /* Ensures proper rendering */
+  }
+
+  .poster-box-25:active::after{
+    content: "CODIGO \A [ROUND 3]\A \A 8 MARCH 2025\A 12 PM TO 2 PM"; /* Two blank lines */
+    white-space: pre-line;  /* Enables line breaks */
+    display: block;  /* Ensures proper rendering */
+  }
+
+  .poster-box-26:active::after{
+    content: "BEAST GAMES \A [ROUND 1]\A \A 8 MARCH 2025\A 8 AM TO 2 PM"; /* Two blank lines */
+    white-space: pre-line;  /* Enables line breaks */
+    display: block;  /* Ensures proper rendering */
+  }
+
+  /* Show text when clicked */
+  .poster-box-1:active::after, .poster-box-2:active::after, .poster-box-3:active::after, 
+  .poster-box-4:active::after, .poster-box-5:active::after, .poster-box-6:active::after,
+  .poster-box-7:active::after, .poster-box-8:active::after, .poster-box-9:active::after,
+  .poster-box-10:active::after, .poster-box-11:active::after, .poster-box-12:active::after,
+  .poster-box-13:active::after, .poster-box-14:active::after, .poster-box-15:active::after,
+  .poster-box-16:active::after, .poster-box-17:active::after, .poster-box-18:active::after,
+  .poster-box-19:active::after, .poster-box-20:active::after, .poster-box-21:active::after,
+  .poster-box-22:active::after, .poster-box-23:active::after, .poster-box-24:active::after,
+  .poster-box-25:active::after, .poster-box-26:active::after
+
+   {
+    opacity: 1;
+  }
+}
+

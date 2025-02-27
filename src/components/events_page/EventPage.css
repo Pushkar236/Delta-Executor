@@ -1,0 +1,6 @@
+.btn button {
+  width: auto; /* Override the universal width */
+  padding: 8px 16px; /* Adjust padding as needed */
+  font-size: 16px; /* Adjust font size as needed */
+}
+

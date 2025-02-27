@@ -1,0 +1,135 @@
+body {
+    background: #000000; /* Match your black theme */
+    font-family: "Lato", sans-serif;
+    margin: 0;
+    max-height: 100%;
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+  }
+  
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+  
+
+  td {
+    padding: 0;
+  }
+  
+  .calendar-container {
+    position: relative;  /* Ensure positioning context */
+    
+    max-width: 27%; /* Adjust to fit properly */
+    
+    background: transparent; /* Dark gradient for SD effect */
+    border-radius: 15px;
+    text-align: center;
+  }
+  
+  .calendar-container header {
+    max-width: 100%;
+    background: transparent;
+    margin-right: 15px;
+    color: #fff;
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative; /* Ensures z-index works */
+    z-index: 1; /* Lower than the dropdown menu */
+  }
+  
+  .month {
+    font-size: 15px;
+    font-weight: bold;
+    line-height: 1;
+    margin: 0;
+    background-color: transparent;
+  }
+  
+  
+  .calendar {
+    background: transparent;
+    
+    
+
+    color: #ffffff;
+    padding: 5px;
+    width: 100%;
+  }
+  
+  .calendar thead {
+    color: #ff0000;
+    font-weight: bold;
+    
+    
+  }
+  
+  .calendar td {
+    
+    padding: 12px;
+    text-align: center;
+    font-size: 13px;
+  }
+  
+  .calendar tbody td:hover {
+    background: #ff0000;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .current-day {
+    background: #b70b0b;
+    color: white;
+    font-weight: bold;
+    border: 1px solid #430000;
+    
+    
+    
+    
+  }
+  
+  .prev-month {
+    color: #747474;
+    
+  }
+/* 📌 RESPONSIVE MEDIA QUERIES */
+@media (max-width: 600px) {
+    .calendar-container {
+        width: 95%;
+        max-width: 350px;
+    }
+
+    .calendar td {
+        padding: 8px;
+        font-size: 12px;
+    }
+
+    .calendar-container header {
+        font-size: 16px;
+        padding: 10px;
+    }
+}
+
+@media (max-width: 400px) {
+    .calendar-container {
+        width: 100%;
+        max-width: 320px;
+    }
+
+    .calendar td {
+        padding: 6px;
+        font-size: 11px;
+    }
+
+    .calendar-container header {
+        font-size: 14px;
+        padding: 8px;
+    }
+}
+  
+  
